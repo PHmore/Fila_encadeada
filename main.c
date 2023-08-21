@@ -2,12 +2,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+//Função auxiliar para interação com usuário
 void interface ()
 {
     printf("\n{Digite a ação desejada}");
     printf("\nInserir [1] || Remover [2] || Mostrar [3] || Sair [0]\n");
 }
 
+//Função auxiliar para leitura de dados
 int ler_int ()
 {
     int num;
@@ -44,7 +46,7 @@ int main ()
             break;
 
         default:
-            printf("Opção Inválida\n");
+            printf("[Opção Inválida]\n");
             break;
         }
     }
