@@ -14,8 +14,6 @@ typedef struct
 
 Fila * Criar_Fila ();
 no * Criar_encher (int );
-//bool fila_cheia ();
-int Fila_Vazia (Fila);
 void Inserir_Fila (Fila *,int);
 void Remover_Fila (Fila *);
 void Mostrar_Fila (Fila *);

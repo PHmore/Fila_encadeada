@@ -5,13 +5,13 @@
 void interface ()
 {
     printf("\n{Digite a ação desejada}");
-    printf("\nInserir [1] || Remover [2] || Mostrar [3] || Sair [0]");
+    printf("\nInserir [1] || Remover [2] || Mostrar [3] || Sair [0]\n");
 }
 
 int ler_int ()
 {
     int num;
-    printf("\n\nObs! [Digite um número inteiro]\nSua escolha: ");
+    printf("\nObs! [Digite um número inteiro]\nSua escolha: ");
     scanf("%d",&num);
     return num;
 }
@@ -28,20 +28,23 @@ int main ()
 
         switch(num){
         case 1: 
-            //inserir
+            printf("\n[INSERINDO]");
+            Inserir_Fila(F,ler_int());
             break;
         case 2:
-            //remover
+            printf("\n[REMOVENDO]");
+            Remover_Fila(F);
             break;
         case 3:
-            //Mostrar
+            printf("\n[MOSTRANDO FILA]");
+            Mostrar_Fila(F);
             break;
         case 0:
             free(F);
             break;
 
         default:
-            printf("Opção inválida\n");
+            printf("Opção Inválida\n");
             break;
         }
     }
