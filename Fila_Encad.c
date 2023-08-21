@@ -2,19 +2,11 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-Fila Criar_Fila()
+Fila * Criar_Fila()
 {
-    Fila novo;
-    novo.inicio = NULL;
+    Fila * novo = (Fila *)malloc (sizeof (Fila));
+    novo->inicio = NULL;
     return novo;
-}
-
-int Fila_Vazia (Fila F)
-{
-    if(F.inicio == NULL)
-    return 1;
-    else
-    return 0;
 }
 
 no * criar_encher (int valor)
@@ -32,44 +24,51 @@ no * criar_encher (int valor)
     return novo;
 }
 
-int Ler_valor ()
+void Mostrar_Fila (Fila * fila)
 {
-    int valor;
-    printf("\nDigite um número: ");
-    scanf("%d",&valor);
-    return valor;
-}
-
-void Mostrar_Fila (Fila fila)
-{
-    while(fila.inicio != NULL)
+    no * aux = fila->inicio;
+    printf("\nFila: ");
+    if(aux == NULL)
+    printf("Vazia\n");
+    else
+    while(aux != NULL)
     {
-        printf(" %d,",fila.inicio->valor);
-        fila.inicio = fila.inicio->prox;
+        printf(" %d,",aux->valor);
+        aux = aux->prox;
     }
+    printf("\n");
 }
 
-void Inserir_Fila (Fila * F)
+void Inserir_Fila (Fila * F,int valor)
 {
-    no * aux = F->inicio;
-    while (aux->prox != NULL)
-    aux = aux->prox;
-    aux->prox = criar_encher(Ler_valor());
+    if (F->inicio == NULL)
+    {
+        F->inicio = criar_encher(valor);
+    }
+    else
+        {
+        no * aux = F->inicio;
+        while (aux->prox != NULL)
+        aux = aux->prox;
+        aux->prox = criar_encher(valor);
+        }
+        Mostrar_Fila(F);
     return;
 }
 
 void Remover_Fila (Fila * F)
 {
     no * aux = F->inicio;
-    if (Fila_Vazia(*F))
+    if (F->inicio == NULL)
     {
-        printf("\nErro Fila Vazia");
+        printf("\nErro Fila Vazia\n\n");
     }
     else
     {
         F->inicio = aux->prox;
         aux->prox = NULL;
         free (aux);
+        Mostrar_Fila(F);
     }
     return;
 }
