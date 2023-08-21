@@ -6,6 +6,10 @@ Fila_encadeada
 
 Patryck Henryck Moreira Silva
 
+## Version
+
+V: 1.0.0
+
 ### Descrição
 
 Trata-se de uma estrutura de dados simples, no caso uma fila encadeada
