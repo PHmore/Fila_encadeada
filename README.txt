@@ -12,12 +12,12 @@ V: 1.1.0
 
 ### Descrição
 
-Trata-se de uma estrutura de dados simples, no caso uma fila encadeada
+Trata-se de uma estrutura de dados simples, no caso uma fila duplamente encadeada
 Este projeto foi realizado com o próposito avaliato da disciplina Engenharia de software
 
 ### Recursos
 
-Tem como utilidade organizar números inteiros em uma fila encadeada
+Tem como utilidade organizar números inteiros em uma fila duplamente encadeada
 
 ### Pré-requisitos
 

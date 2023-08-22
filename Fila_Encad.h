@@ -4,12 +4,14 @@
 typedef struct no
 {
     struct no * prox;
+    struct no * ant;
     int valor;
 }no;
 
 typedef struct
 {
     no * inicio;
+    no * fim;
 }Fila;
 
 //Aloca e cria a fila
