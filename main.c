@@ -12,9 +12,21 @@ void interface ()
 //Função auxiliar para leitura de dados
 int ler_int ()
 {
+    int nlidos;
     int num;
+    
+    do{
     printf("\nObs! [Digite um número inteiro]\nSua escolha: ");
-    scanf("%d",&num);
+    //a variavel nlidos recebe a quantidade de elementos lidos pelo scanf
+    nlidos = scanf("%d",&num);
+    
+    int c;
+    //Esse trecho ler os caractere no buffer enquanto existirem
+    while((c = getchar ()) != '\n' && c != EOF);
+
+    //Como o a leitura esperada é de um inteiro a função continua até que um inteiro seja lido
+    } while (nlidos != 1);
+    
     return num;
 }
 
