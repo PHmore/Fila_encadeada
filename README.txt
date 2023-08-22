@@ -19,6 +19,12 @@ Este projeto foi realizado com o próposito avaliato da disciplina Engenharia de
 
 Tem como utilidade organizar números inteiros em uma fila duplamente encadeada
 
+# Feature 1 (v:1.1.0): Checagem de entrada de dados para garantir que a entrada foi um inteiro e assim deixar o algoritmo mais estável
+
+## Feature 2 (v:2.1.0): Alteração da estrutura de uma fila encadeada para uma fila duplamente encadeada
+
+### Feature 3 (v:2.2.0): Adicionado uma fila prioritária ou seja que é atendida antes da fila padrão
+
 ### Pré-requisitos
 
 Conter os 3 arquivos do projeto sendo eles: "main.c", "Fila_Encad.h", "Fila_Encad.c"
