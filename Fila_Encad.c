@@ -6,6 +6,7 @@ Fila * Criar_Fila()
 {
     Fila * novo = (Fila *)malloc (sizeof (Fila));
     novo->inicio = NULL;
+    novo->fim = NULL;
     return novo;
 }
 
@@ -19,6 +20,7 @@ no * criar_encher (int valor)
     else 
     {
         novo->prox = NULL;
+        novo->ant = NULL;
         novo->valor = valor;
     }
     return novo;
@@ -31,10 +33,20 @@ void Mostrar_Fila (Fila * fila)
     if(aux == NULL)
     printf("Vazia\n");
     else
-    while(aux != NULL)
+    {
+    while(aux)
     {
         printf(" %d,",aux->valor);
         aux = aux->prox;
+    }
+
+    printf("\nFila Contrária: ");
+    aux = fila->fim;
+    while(aux)
+    {
+        printf(" %d,",aux->valor);
+        aux = aux->ant;
+    }
     }
     printf("\n");
 }
@@ -44,13 +56,13 @@ void Inserir_Fila (Fila * F,int valor)
     if (F->inicio == NULL)
     {
         F->inicio = criar_encher(valor);
+        F->fim = F->inicio;
     }
     else
         {
-        no * aux = F->inicio;
-        while (aux->prox != NULL)
-        aux = aux->prox;
-        aux->prox = criar_encher(valor);
+        F->fim->prox = criar_encher(valor);
+        F->fim->prox->ant = F->fim;
+        F->fim = F->fim->prox;
         }
         Mostrar_Fila(F);
     return;
@@ -65,9 +77,20 @@ void Remover_Fila (Fila * F)
     }
     else
     {
-        F->inicio = aux->prox;
+        if(F->inicio->prox == NULL)
+        {
+            F->inicio->ant = NULL;
+            free(F->inicio);
+            F->inicio = NULL;
+        }
+        else
+        {
+        F->inicio = F->inicio->prox;
+        F->inicio->ant = NULL;
         aux->prox = NULL;
+        aux->ant = NULL;
         free (aux);
+        }
         Mostrar_Fila(F);
     }
     return;
