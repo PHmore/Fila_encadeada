@@ -8,7 +8,7 @@ Patryck Henryck Moreira Silva
 
 ## Version
 
-V: 2.1.0
+V: 2.2.0
 
 ### Descrição
 
@@ -40,7 +40,7 @@ Email: patryckhenryck401@gmail.com
 
 ### Status do Projeto
 
-Desenvolvimento Ativo
+Arquivado
 
 ### Agradecimentos
 
