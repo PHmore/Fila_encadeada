@@ -12,7 +12,7 @@ V: 2.1.0
 
 ### Descrição
 
-Trata-se de uma estrutura de dados simples, no caso uma fila duplamente encadeada
+Trata-se de uma estrutura de dados simples, no caso uma fila duplamente encadeada com prioridade
 Este projeto foi realizado com o próposito avaliato da disciplina Engenharia de software
 
 ### Recursos
