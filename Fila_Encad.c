@@ -60,16 +60,9 @@ void Inserir_Fila (Fila * F,int valor)
     }
     else
         {
-        //no * aux = F->inicio;
-        
-        //while (aux->prox != NULL)
-        //aux = aux->prox;
         F->fim->prox = criar_encher(valor);
         F->fim->prox->ant = F->fim;
         F->fim = F->fim->prox;
-        //aux->prox = criar_encher(valor);
-        //aux->prox->ant = aux;
-        //F->fim = aux->prox;
         }
         Mostrar_Fila(F);
     return;
