@@ -34,6 +34,7 @@ int main ()
 {
     int num;
     Fila * F = Criar_Fila ();
+    Fila * Prior = Criar_Fila ();
 
     do 
     {
@@ -42,19 +43,31 @@ int main ()
 
         switch(num){
         case 1: 
+            printf("\n[DADO PRIORITÁRIO] - Sim [1] || Não [!=1]\n");
+            num = ler_int();
             printf("\n[INSERINDO]");
+            if(num == 1)
+            Inserir_Fila(Prior,ler_int());
+            else
             Inserir_Fila(F,ler_int());
+            num = 1;
             break;
         case 2:
             printf("\n[REMOVENDO]");
+            if(Prior->inicio == NULL)
             Remover_Fila(F);
+            else 
+            Remover_Fila(Prior);
             break;
         case 3:
             printf("\n[MOSTRANDO FILA]");
             Mostrar_Fila(F);
+            printf("\n[MOSTRANDO FILA PRIORITÁRIA]");
+            Mostrar_Fila(Prior);
             break;
         case 0:
             free(F);
+            free(Prior);
             break;
 
         default:

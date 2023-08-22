@@ -80,6 +80,7 @@ void Remover_Fila (Fila * F)
         if(F->inicio->prox == NULL)
         {
             F->inicio->ant = NULL;
+            printf(" - Removido [%d]",F->inicio->valor);
             free(F->inicio);
             F->inicio = NULL;
         }
@@ -89,6 +90,7 @@ void Remover_Fila (Fila * F)
         F->inicio->ant = NULL;
         aux->prox = NULL;
         aux->ant = NULL;
+        printf(" - Removido [%d]",aux->valor);
         free (aux);
         }
         Mostrar_Fila(F);
