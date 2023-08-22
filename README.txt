@@ -8,7 +8,7 @@ Patryck Henryck Moreira Silva
 
 ## Version
 
-V: 1.0.0
+V: 1.1.0
 
 ### Descrição
 
